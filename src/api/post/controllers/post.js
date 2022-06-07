@@ -14,6 +14,12 @@ module.exports = createCoreController("api::post.post", ({ strapi }) => ({
       where: { slug },
     });
 
+    // testing
+    entity.Content = entity.Content.replace(
+      'src="/',
+      `src=\\"${strapi.config.get("server.url")}/`
+    );
+
     const sanitizedEntity = await this.sanitizeOutput(entity);
 
     return this.transformResponse(sanitizedEntity);
