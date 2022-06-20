@@ -20,6 +20,9 @@
     },
     "slug": {
       "type": "uid"
+    },
+    "short_description": {
+      "type": "string"
     }
   }
 }
